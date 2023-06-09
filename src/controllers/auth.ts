@@ -15,7 +15,6 @@ export const registerController = async (
     const token = generateToken(user._id)
     res.cookie('token', token, { httpOnly: true })
     res.status(201).json({ message: 'Register success' })
-    res.status(201).json(user)
   } catch (error: any) {
     res.status(400).json({ message: 'Something went wrong' })
   }
