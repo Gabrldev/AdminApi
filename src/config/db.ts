@@ -1,5 +1,4 @@
 import 'dotenv/config'
-
 import { connect } from 'mongoose'
 
 async function connectToDatabase (): Promise<void> {

@@ -7,12 +7,13 @@ import {
   updateController
 } from '../controllers/products'
 import { uploadFile } from '../utils/upload'
+import { protectedRoute } from '../middleware/session'
 
 const router = Router()
 
-router.get('/', productController)
-router.post('/', uploadFile, createController)
-router.delete('/:id', deleteController)
-router.put('/:id', uploadFile, updateController)
+router.get('/', protectedRoute, productController)
+router.post('/', protectedRoute, uploadFile, createController)
+router.delete('/:id', protectedRoute, deleteController)
+router.put('/:id', protectedRoute, uploadFile, updateController)
 
 export { router }

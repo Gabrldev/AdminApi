@@ -7,7 +7,7 @@ import {
 } from '../service/product.service'
 
 export const productController = async (
-  req: Request,
+  req: Request | any,
   res: Response
 ): Promise<void> => {
   try {
